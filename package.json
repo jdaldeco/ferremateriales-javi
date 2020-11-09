@@ -1,6 +1,6 @@
 {
   "name": "ferremateriales-javi",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,8 +19,10 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.12",
+    "mongoose": "^5.10.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -56,5 +58,12 @@
   "bugs": {
     "url": "https://github.com/jdaldeco/ferremateriales/issues"
   },
-  "homepage": "https://github.com/jdaldeco/ferremateriales#readme"
+  "homepage": "https://github.com/jdaldeco/ferremateriales#readme",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api"
+  ]
 }

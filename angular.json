@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ferremateriales-javi"
+    }
+  },
+  "defaultProject": "ferremateriales-javi",
+  "cli": {
+    "analytics": "6e39d0c7-83fb-4c41-b3f6-74aef533fd84"
+  }
 }
