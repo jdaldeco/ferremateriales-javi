@@ -2,40 +2,40 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'localhost del mongo donde estén los usuarios xd';
+const baseUrl = '/api/ventas/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class SalesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsers(): Observable<any> {
+  getAllSales(): Observable<any> {
     return this.http.get<any>(baseUrl);
   }
 
-  getUser(id): Observable<any> {
+  getSale(id): Observable<any> {
     return this.http.get<any>(`${baseUrl}/${id}`);
   }
 
-  createUser(data): Observable<any> {
+  createSale(data): Observable<any> {
     return this.http.post<any>(baseUrl, data);
   }
 
-  updateUser(id, data): Observable<any> {
+  updateSale(id, data): Observable<any> {
     return this.http.put<any>(`${baseUrl}/${id}`, data);
   }
 
-  deleteUser(id): Observable<any> {
+  deleteSale(id): Observable<any> {
     return this.http.delete<any>(`${baseUrl}/${id}`);
   }
 
-  deleteAllUsers(): Observable<any> {
+  deleteAllSales(): Observable<any> {
     return this.http.delete<any>(baseUrl);
   }
 
-  findByUsername(username): Observable<any> {
-    return this.http.get<any>(`${baseUrl}?username=${username}`);
+  findByFolio(folio): Observable<any> {
+    return this.http.get<any>(`${baseUrl}?folio=${folio}`);
   }
 }

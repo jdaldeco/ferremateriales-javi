@@ -1,0 +1,54 @@
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Agregar un producto</h1>
+        <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" class="form-control" id="nombre" required [(ngModel)]="model.nombre" name="nombre"
+                    #nombre="ngModel">
+                <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                    El nombre es requerido.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción: </label>
+                <input type="text" class="form-control" id="descripcion" required [(ngModel)]="model.descripcion"
+                    name="descripcion" #descripcion="ngModel">
+                <div [hidden]="descripcion.valid || descripcion.pristine" class="alert alert-danger">
+                    La descripción es requerida.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio: </label>
+                <input type="number" class="form-control" id="precio" required [(ngModel)]="model.precio"
+                    name="precio" #precio="ngModel">
+                <div [hidden]="precio.valid || precio.pristine" class="alert alert-danger">
+                    El precio es requerido.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid">Guardar</button>
+            <button type="button" class="btn btn-default" (click)="nuevoProducto(); productForm.reset()">Limpiar</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h2>Ha guardado el siguiente producto:</h2>
+        <div class="row">
+            <div class="col-xs-3">Nombre</div>
+            <div class="col-xs-9">{{ model.nombre }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Descripción</div>
+            <div class="col-xs-9">{{ model.descripcion }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Precio</div>
+            <div class="col-xs-9">{{ model.precio }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false">Editar</button>
+    </div>
+</div>

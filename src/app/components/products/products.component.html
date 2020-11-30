@@ -1,1 +1,30 @@
-<p>products works!</p>
+<div class="d-flex justify-content-center">
+  <div class="w-75 p-3">
+    <div class="d-flex flex-row justify-content-between mb-2">
+      <h1>Productos:</h1>
+      <input class='btn btn-success' type='button' value='Agregar nuevo producto' routerLink="/add-product"/>
+    </div>
+  
+    <table class="table table-bordered ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.descripcion}}</td>
+          <td>{{producto.precio | currency:'MXN'}}</td>
+          <td><input class='btn btn-info' type='button' value='Editar' routerLink="/add-product" (click)="enviarDatos(i, 2)"/> 
+            <input class='btn btn-danger ml-4' type='button' value='Eliminar' (click)="eliminarProducto(i)"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'localhost del mongo donde estén los productos xd';
+const baseUrl = 'http://localhost:3000/api/productos/';
 
 @Injectable({
   providedIn: 'root'
@@ -12,31 +12,31 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getAllProducts(): Observable<any> {
-    return this.http.get(baseUrl);
+    return this.http.get<any>(baseUrl);
   }
 
   getProduct(id): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get<any>(`${baseUrl}/${id}`);
   }
 
   createProduct(data): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post<any>(baseUrl, data);
   }
 
   updateProduct(id, data): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put<any>(`${baseUrl}${id}`, data);
   }
 
   deleteProduct(id): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.delete<any>(`${baseUrl}${id}`);
   }
 
   deleteAllProducts(): Observable<any> {
-    return this.http.delete(baseUrl);
+    return this.http.delete<any>(baseUrl);
   }
 
   findByCode(code): Observable<any> {
-    return this.http.get(`${baseUrl}?code=${code}`);
+    return this.http.get<any>(`${baseUrl}?code=${code}`);
   }
 }
 

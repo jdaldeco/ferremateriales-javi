@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'localhost del mongo donde estén los clientes xd';
+const baseUrl = '/api/clientes/';
 
 @Injectable({
   providedIn: 'root'
@@ -12,30 +12,30 @@ export class ClientsService {
   constructor(private http: HttpClient) { }
 
   getAllClients(): Observable<any> {
-    return this.http.get(baseUrl);
+    return this.http.get<any>(baseUrl);
   }
 
   getClient(id): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get<any>(`${baseUrl}/${id}`);
   }
 
   createClient(data): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post<any>(baseUrl, data);
   }
 
   updateClient(id, data): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put<any>(`${baseUrl}/${id}`, data);
   }
 
   deleteClient(id): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.delete<any>(`${baseUrl}/${id}`);
   }
 
   deleteAllClients(): Observable<any> {
-    return this.http.delete(baseUrl);
+    return this.http.delete<any>(baseUrl);
   }
 
   findByName(name): Observable<any> {
-    return this.http.get(`${baseUrl}?name=${name}`);
+    return this.http.get<any>(`${baseUrl}?name=${name}`);
   }
 }
