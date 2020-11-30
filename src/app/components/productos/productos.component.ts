@@ -3,11 +3,11 @@ import { ProductsService } from '../../services/products.service';
 import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-productos',
+  templateUrl: './productos.component.html',
+  styleUrls: ['./productos.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductosComponent implements OnInit {
 
   productos;
 

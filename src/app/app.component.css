@@ -1,0 +1,86 @@
+
+.container {
+    display: flex;
+    background-color: white;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #262626;
+
+    height: 100%;
+    width: 25rem;
+    border-right: 3px solid #217555;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #217555;
+    height: 15rem;
+    margin-top: -1rem;
+    margin-left: -1rem;
+    border-bottom: 1px solid rgba(46, 46, 46, 0.514);
+}
+
+.logo {
+    cursor: pointer;
+    font-size: 7rem;
+    color: white;
+    font-family: 'Yellowtail', cursive;
+    text-shadow: 2px 2px 0px #eb452b, 
+                  4px 4px 0px #efa032, 
+                  6px 6px 0px #46b59b, 
+                  8px 8px 0px #017e7f, 
+                  10px 10px 0px #052939;
+}
+
+.nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+}
+
+.nav li {
+    cursor: pointer;
+}
+
+.nav li a {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 2.5rem;
+
+    display: block;
+    padding: 1.5rem 3rem;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #21755588;
+    transform: scaleY(0);
+    transition: transform .2s,
+                width .2s cubic-bezier(1,0,0,1) .2s,
+                background-color .1s;
+}
+
+.nav li a:hover::before,
+.active::before {
+    transform: scaleY(1);
+    width: 100%;
+}
+
+.nav li a:active::before {
+    background-color: #29c0869a;
+}

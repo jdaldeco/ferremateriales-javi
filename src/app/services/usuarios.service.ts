@@ -7,7 +7,7 @@ const baseUrl = 'localhost del mongo donde estén los usuarios xd';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
