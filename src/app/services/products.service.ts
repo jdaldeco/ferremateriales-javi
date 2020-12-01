@@ -7,7 +7,7 @@ const baseUrl = 'http://localhost:3000/api/productos/';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductosService {
+export class ProductsService {
 
   constructor(private http: HttpClient) { }
 

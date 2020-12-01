@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center">
+    <div class="w-75 p-3">
+      <div class="d-flex flex-row justify-content-between mb-2">
+        <h1>Clientes:</h1>
+        <input class='btn btn-success' type='button' value='Agregar nuevo cliente' routerLink="/add-client"/>
+      </div>
+    
+      <table class="table table-bordered ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Sector</th>
+            <th scope="col">Domicilio</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.sector}}</td>
+            <td>{{cliente.domicilio}}</td>
+            <td>{{cliente.rfc}}</td>
+            <td>{{cliente.correo}}</td>
+            <td><input class='btn btn-info' type='button' value='Editar' routerLink="/add-user" (click)="enviarDatos(i, 2)"/> 
+              <input class='btn btn-danger ml-4' type='button' value='Eliminar' (click)="eliminarCliente(i)"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

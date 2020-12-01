@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'localhost del mongo donde estén los usuarios xd';
+const baseUrl = 'http://localhost:3000/api/clientes/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class UsersService {
 
   constructor(private http: HttpClient) { }
 

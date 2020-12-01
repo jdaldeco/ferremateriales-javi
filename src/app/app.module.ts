@@ -8,30 +8,24 @@ import { AppComponent } from './app.component';
 
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ProductsComponent } from './components/products/products.component';
+import { UsersComponent } from './components/users/users.component';
 import { HomeComponent } from './components/home/home.component';
-<<<<<<< Updated upstream
 import { ProductsAddComponent } from './components/products-add/products-add.component';
-=======
-import { ClientesComponent } from './components/clientes/clientes.component';
-import { ProductosComponent } from './components/productos/productos.component';
-import { VentasComponent } from './components/ventas/ventas.component';
->>>>>>> Stashed changes
+import { UsersAddComponent } from './components/users-add/users-add.component';
+import { SalesComponent } from './components/sales/sales.component';
+import { SalesAddComponent } from './components/sales-add/sales-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< Updated upstream
-    ClientsComponent,
     ProductsComponent,
     UsersComponent,
     HomeComponent,
-    ProductsAddComponent
-=======
-    HomeComponent,
-    ClientesComponent,
-    ProductosComponent,
-    VentasComponent
->>>>>>> Stashed changes
+    ProductsAddComponent,
+    UsersAddComponent,
+    SalesComponent,
+    SalesAddComponent
   ],
   imports: [
     BrowserModule,

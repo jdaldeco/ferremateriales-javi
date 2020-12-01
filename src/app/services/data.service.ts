@@ -8,6 +8,7 @@ export class DataService {
 
   private idProducto = new BehaviorSubject<string>("");
   idctual = this.idProducto.asObservable();
+
   private type = new BehaviorSubject<number>(1);
   typeActual = this.type.asObservable();
 
@@ -18,7 +19,7 @@ export class DataService {
   changeId(nombre: string) {
     this.idProducto.next(nombre);
   }
-    changeType(tipo: number) {
+  changeType(tipo: number) {
     this.type.next(tipo);
   }
 }
