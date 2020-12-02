@@ -1,9 +1,10 @@
 <div class="container">
     <div [hidden]="submitted">
-        <h1>Agregar un producto</h1>
+        <h1 *ngIf="tipo == 1">Agregar un producto</h1>
+        <h1 *ngIf="tipo == 2">Editar un producto</h1>
         <form (ngSubmit)="onSubmit()" #productForm="ngForm">
             <div class="form-group">
-                <label for="nombre">Nombre: </label>
+                <label for="nombre">Código: </label>
                 <input type="text" class="form-control" id="nombre" required [(ngModel)]="model.nombre" name="nombre"
                     #nombre="ngModel">
                 <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
@@ -50,6 +51,5 @@
         </div>
         <br>
         <button class="btn btn-primary" [routerLink]="['/products']">Lista de productos</button><br><br>
-        <button class="btn btn-primary" (click)="submitted=false">Editar</button>
     </div>
 </div>

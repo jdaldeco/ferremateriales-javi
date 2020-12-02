@@ -2,7 +2,7 @@
   <div class="w-75 p-3">
     <div class="d-flex flex-row justify-content-between mb-2">
       <h1>Productos:</h1>
-      <input class='btn btn-success' type='button' value='Agregar nuevo producto' routerLink="/add-product"/>
+      <input class='btn btn-success' type='button' value='Agregar nuevo producto' (click)="enviarDatos(0, 1)" routerLink="/add-product" />
     </div>
   
     <table class="table table-bordered ">

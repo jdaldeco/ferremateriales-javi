@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
   enviarDatos(index, type){
     this.dataService.changeId(this.productos[index]._id);
     this.dataService.changeType(type);
+    console.log ("El índice del producto es: " + this.productos[index]._id + "el tipo es: " + type);
   }
 
   eliminarProducto(index){

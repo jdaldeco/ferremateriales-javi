@@ -10,12 +10,29 @@ import { DataService } from '../../services/data.service';
 })
 export class ProductsAddComponent implements OnInit {
 
-  nombreProducto:string;
+  listaProductos;
+  idProducto:string;
+  tipo:number;
 
   constructor(private productsService: ProductsService, private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.idctual.subscribe(nombreProducto => this.nombreProducto = nombreProducto);
+    this.dataService.typeActual.subscribe(type => this.tipo = type);
+    this.dataService.idctual.subscribe(id => this.idProducto = id);
+    if (this.tipo == 2){
+      this.productsService.getAllProducts().subscribe((data) => { 
+        this.listaProductos = data['productos']; 
+        this.listaProductos.forEach(prod => {
+          if (prod._id == this.idProducto){
+            this.model.nombre = prod.nombre;
+            this.model.precio = prod.precio;
+            this.model.descripcion = prod.descripcion;
+          }
+        });
+      });
+    } else {
+      this.idProducto = "";
+    }
   }
 
   model = new Product("",0,"");
@@ -24,9 +41,15 @@ export class ProductsAddComponent implements OnInit {
 
   onSubmit() { 
     this.submitted = true; 
-    this.productsService.createProduct(this.model).subscribe((data) => {
-      console.log(data);   
-    });;
+    if (this.tipo == 1){
+      this.productsService.createProduct(this.model).subscribe((data) => {
+        console.log(data);   
+      });;
+    } else {
+      this.productsService.updateProduct(this.idProducto, this.model).subscribe((data) => {
+        console.log(data);   
+      });;
+    }
   }
 
   nuevoProducto() {
