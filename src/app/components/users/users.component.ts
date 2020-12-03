@@ -26,6 +26,7 @@ export class UsersComponent implements OnInit {
   enviarDatos(index, type) {
     this.dataService.changeId(this.clientes[index]._id);
     this.dataService.changeType(type);
+    console.log ("El índice del cliente es: " + this.clientes[index]._id + "el tipo es: " + type);
   }
 
   eliminarCliente(index) {

@@ -10,7 +10,9 @@ import { DataService } from '../../services/data.service';
 })
 export class UsersAddComponent implements OnInit {
 
-  nombreCliente:string;
+  listaClientes;
+  idCliente: string;
+  tipo: number;
 
   constructor(
     private usersService: UsersService,
@@ -18,12 +20,43 @@ export class UsersAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.dataService.idctual.subscribe(nombreCliente => this.nombreCliente = nombreCliente)
+    this.dataService.typeActual.subscribe(type => this.tipo = type);
+    this.dataService.idctual.subscribe(id => this.idCliente = id);
+
+    if (this.tipo == 2){
+      this.usersService.getAllUsers().subscribe((data) => { 
+        this.listaClientes = data['clientes']; 
+        this.listaClientes.forEach(client => {
+          if (client._id == this.idCliente){
+            this.model.nombre = client.nombre;
+            this.model.sector = client.sector;
+            this.model.domicilio = client.domicilio;
+            this.model.rfc = client.rfc;
+            this.model.correo = client.correo;
+          }
+        });
+      });
+    } else {
+      this.idCliente = "";
+    }
   }
 
   model = new User("", "", "", "", "");
 
   submitted = false;
+
+  onSubmit() { 
+    this.submitted = true; 
+    if (this.tipo == 1){
+      this.usersService.createUser(this.model).subscribe((data) => {
+        console.log(data);   
+      });;
+    } else {
+      this.usersService.updateUser(this.idCliente, this.model).subscribe((data) => {
+        console.log(data);   
+      });;
+    }
+  }
 
   nuevoCliente() {
     this.model = new User("", "", "", "", "");
