@@ -1,0 +1,94 @@
+.container {
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+}
+
+
+.container-large {
+    width: auto;
+}
+
+.container-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-small {
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 47rem;
+    margin-left: 2rem;
+    height: 25rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-bottom: 27rem;
+}
+
+.card-small:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.308);
+}
+
+.card-title {
+    margin: 2rem;
+    font-size: 3rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.text-container {
+    height: 10rem;
+}
+
+.card-content {
+    margin: 2rem;
+    font-size: 2rem;
+    color: #8d8d8d;
+}
+
+.button-container {
+    margin: 2rem;
+}
+
+button {
+    border: 3px solid #4ba09e;
+    background-color: #4ba09e;
+    border-radius: 3px;
+    width: 100%;
+    height: 5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.home-span {
+    padding: 0;
+    margin-top: -2rem;
+    height: 28rem;
+    width: 100%;
+    
+    background-color: #4ba09e0c;
+    border-bottom: 1px solid #ccc;
+}
+
+.title-container {
+    margin: 2rem;
+}
+
+.home-title {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+    color: white;
+    
+    text-shadow: 5px 6px #4ba09e,
+                -2px -2px black;
+}
+
+.description {
+    margin: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(58, 58, 58);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
+}

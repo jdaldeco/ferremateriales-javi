@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div class="home-span">
+    <div class="title-container">
+        <h2 class="home-title">Bienvenido!</h2>
+    </div>
+
+    <div class="description">
+        <p>Maneja tu negocio de manera más eficiente y desde cualquier dispositivo.</p>
+        <p>Ferremateriales el Javi es una empresa familiar de ferreterías fundada en el año 2006 en el municipio de Angostura, Sinaloa, especializada en la venta de material de construcción y producto ferretero al menudeo y mayoreo para distintos sectores.
+            Cuenta actualmente con dos sucursales, fungiendo la sucursal de Angostura como matriz, y otra sucursal en Alhuey, en la que se maneja una selección reducida de productos.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container-small" [routerLink]="['/sales']">
+        <div class="card-small">
+            <h2 class="card-title">Ventas</h2>
+            <div class="text-container">
+                <p class="card-content">Registrar las ventas de todos los productos de tu catálogo</p>
+            </div>
+            <div class="button-container">
+                <button>Ver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-small">
+        <div class="card-small" [routerLink]="['/products']">
+            <h2 class="card-title">Productos</h2>
+            <div class="text-container">
+                <p class="card-content">Registrar todos los productos que manejas!</p>
+            </div>
+            <div class="button-container">
+                <button>Ver</button>
+            </div>
+        </div>
+
+        <div class="card-small" [routerLink]="['/users']">
+            <h2 class="card-title">Clientes</h2>
+            <div class="text-container">
+                <p class="card-content">Registrar tus clientes</p>
+            </div>
+            <div class="button-container">
+                <button>Ver</button>
+            </div>
+        </div>
+    </div>
+</div>
