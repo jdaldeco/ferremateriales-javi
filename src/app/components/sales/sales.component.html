@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
     <div class="w-75 p-3">
       <div class="d-flex flex-row justify-content-between mb-2">
-        <h1>Productos:</h1>
+        <h1>Ventas</h1>
         <input class='btn btn-success' type='button' value='Agregar nueva venta' routerLink="/add-sale"/>
       </div>
     
@@ -14,19 +14,16 @@
             <th scope="col">Productos</th>
             <th scope="col">Importe</th>
             <th scope="col">Fecha</th>
-            <th scoep="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let venta of ventas; index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{venta.folio}}</td>
-            <td>{{venta.clientes}}</td>
+            <td>{{venta.cliente}}</td>
             <td>{{venta.productos}}</td>
             <td>{{venta.importe | currency:'MXN'}}</td>
-            <td>{{venta.fecha}}</td>
-            <td><input class='btn btn-info' type='button' value='Editar' routerLink="/add-sale" (click)="enviarDatos(i, 2)"/> 
-              <input class='btn btn-danger ml-4' type='button' value='Eliminar' (click)="eliminarVenta(i)"/></td>
+            <td>{{embellecerFecha(venta.fecha)}}</td>
           </tr>
         </tbody>
       </table>

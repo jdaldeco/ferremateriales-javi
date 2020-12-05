@@ -6,6 +6,8 @@ import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 
+import { DatePipe } from '@angular/common'
+
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
@@ -34,7 +36,8 @@ import { SalesAddComponent } from './components/sales-add/sales-add.component';
     routing
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

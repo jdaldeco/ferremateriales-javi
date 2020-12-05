@@ -36,7 +36,7 @@ export class ProductsService {
   }
 
   findByCode(code): Observable<any> {
-    return this.http.get<any>(`${baseUrl}?code=${code}`);
+    return this.http.get<any>(`${baseUrl}/code/${code}`);
   }
 }
 

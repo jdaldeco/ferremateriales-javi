@@ -17,7 +17,7 @@ export class SalesService {
   }
 
   getSale(id): Observable<any> {
-    return this.http.get<any>(`${baseUrl}/${id}`);
+    return this.http.get<any>(`${baseUrl}${id}`);
   }
 
   createSale(data): Observable<any> {
@@ -25,11 +25,11 @@ export class SalesService {
   }
 
   updateSale(id, data): Observable<any> {
-    return this.http.put<any>(`${baseUrl}/${id}`, data);
+    return this.http.put<any>(`${baseUrl}${id}`, data);
   }
 
   deleteSale(id): Observable<any> {
-    return this.http.delete<any>(`${baseUrl}/${id}`);
+    return this.http.delete<any>(`${baseUrl}${id}`);
   }
 
   deleteAllSales(): Observable<any> {

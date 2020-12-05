@@ -1,12 +1,9 @@
-import { User } from './user';
-import { Product } from './product';
-
 export class Sale {
 
     constructor(
-        public nombre: string,
-        public clientes: User,
-        public productos: Product,
+        public folio: string,
+        public productos: [],
+        public cliente: string,
         public importe: number,
         public fecha: Date
     ) { }
