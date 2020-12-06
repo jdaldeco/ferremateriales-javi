@@ -38,4 +38,26 @@
                 (click)="nuevaVenta(); saleForm.reset()">Limpiar</button>
         </form>
     </div>
+
+    <div [hidden]="!submitted">
+        <h2>Ha registrado la siguiente venta: </h2>
+        <div class="row">
+            <div class="col-xs-3">Producto: </div>
+            <div class="col-xs-9">{{ model.productos }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Cliente: </div>
+            <div class="col-xs-9">{{ model.cliente }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Importe: </div>
+            <div class="col-xs-9">{{ model.importe }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Fecha: </div>
+            <div class="col-xs-9">{{ model.fecha }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" [routerLink]="['/sales']">Lista de ventas</button><br><br>
+    </div>
 </div>
