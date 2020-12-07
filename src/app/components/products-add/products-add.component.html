@@ -37,19 +37,23 @@
 
     <div [hidden]="!submitted">
         <h2>Ha guardado el siguiente producto:</h2>
-        <div class="row">
-            <div class="col-xs-3">Nombre: </div>
-            <div class="col-xs-9">{{ model.nombre }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">Descripción: </div>
-            <div class="col-xs-9">{{ model.descripcion }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">Precio: </div>
-            <div class="col-xs-9">{{ model.precio }}</div>
-        </div>
-        <br>
-        <button class="btn btn-primary" [routerLink]="['/products']">Lista de productos</button><br><br>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Código: </label>
+                <input type="text" name="nombre" disabled value="{{ model.nombre }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="descripcion">Descripción: </label>
+                <input type="text" disabled name="descripcion" value="{{ model.descripcion }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="precio">Precio: </label>
+                <input type="text" disabled name="precio" value="{{ model.precio }}" class="form-control">
+            </div>
+            <br>
+            <button class="btn btn-primary" [routerLink]="['/products']">Mostrar lista de productos</button><br><br>
+        </form>
     </div>
 </div>

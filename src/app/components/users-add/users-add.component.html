@@ -43,27 +43,33 @@
 
     <div [hidden]="!submitted">
         <h2>Ha guardado el siguiente cliente:</h2>
-        <div class="row">
-            <div class="col-xs-3">Nombre: </div>
-            <div class="col-xs-9">{{ model.nombre }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">Sector: </div>
-            <div class="col-xs-9">{{ model.sector }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">Domicilio: </div>
-            <div class="col-xs-9">{{ model.domicilio }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">RFC: </div>
-            <div class="col-xs-9">{{ model.rfc }}</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">Correo: </div>
-            <div class="col-xs-9">{{ model.correo }}</div>
-        </div>
-        <br>
-        <button class="btn btn-primary" [routerLink]="['/users']">Lista de clientes</button><br><br>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" disabled value="{{ model.nombre }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="sector">Sector: </label>
+                <input type="text" disabled name="sector" value="{{ model.sector }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="domicilio">Domicilio: </label>
+                <input type="text" disabled name="domicilio" value="{{ model.domicilio }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="rfc">RFC: </label>
+                <input type="text" disabled name="rfc" value="{{ model.rfc }}" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="correo">Correo: </label>
+                <input type="text" disabled name="correo" value="{{ model.correo }}" class="form-control">
+            </div>
+            <br>
+            <button class="btn btn-primary" [routerLink]="['/users']">Mostrar lista de clientes</button><br><br>
+        </form>
     </div>
 </div>
